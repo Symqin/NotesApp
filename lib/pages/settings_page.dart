@@ -72,20 +72,6 @@ class SettingsPage extends StatelessWidget {
             ),
             onTap: () => _showHelpDialog(context),
           ),
-
-          const Divider(),
-
-          // Data section
-          _buildSectionHeader(context, 'Data'),
-          ListTile(
-            leading: Icon(
-              Icons.delete_sweep_outlined,
-              color: colorScheme.error,
-            ),
-            title: const Text('Delete All Notes'),
-            subtitle: const Text('Remove all notes permanently'),
-            onTap: () => _showDeleteAllDialog(context),
-          ),
         ],
       ),
     );
@@ -155,41 +141,6 @@ class SettingsPage extends StatelessWidget {
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
             child: const Text('Got it!'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _showDeleteAllDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Delete All Notes'),
-        content: const Text(
-          'Are you sure you want to delete ALL notes? This action cannot be undone.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(ctx).pop(),
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () {
-              // Delete all notes by fetching and deleting each one
-              final db = context.read<ThemeProvider>();
-              Navigator.of(ctx).pop();
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Feature coming soon'),
-                  behavior: SnackBarBehavior.floating,
-                ),
-              );
-            },
-            child: const Text(
-              'Delete All',
-              style: TextStyle(color: Colors.red),
-            ),
           ),
         ],
       ),
