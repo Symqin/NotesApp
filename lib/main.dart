@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Notes App',
       theme: ThemeData(
         colorSchemeSeed: Colors.amber,
         useMaterial3: true,
