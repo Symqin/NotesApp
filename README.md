@@ -10,6 +10,7 @@ Aplikasi catatan sederhana yang dibuat menggunakan **Flutter** dengan **Isar Dat
 - **Dark / Light Mode** — Tema gelap dan terang, bisa diubah di Settings
 - **Persistent Storage** — Data catatan tersimpan secara lokal menggunakan Isar
 - **Material 3 UI** — Desain modern dengan Material Design 3
+- **Custom App Icon** — Ikon launcher kustom dengan adaptive icon untuk Android 8.0+
 
 ## 🛠️ Tech Stack
 
@@ -20,10 +21,15 @@ Aplikasi catatan sederhana yang dibuat menggunakan **Flutter** dengan **Isar Dat
 | **Provider** | State management |
 | **SharedPreferences** | Penyimpanan preferensi tema |
 | **Material 3** | Design system |
+| **flutter_launcher_icons** | Generator ikon launcher kustom |
 
 ## 📂 Struktur Proyek
 
 ```
+assets/
+└── logo/
+    ├── notesbig.png             # Ikon launcher standar
+    └── notesmall.png            # Foreground adaptive icon
 lib/
 ├── main.dart                    # Entry point, MultiProvider setup
 ├── models/
